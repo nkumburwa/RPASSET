@@ -150,14 +150,14 @@ dir="{{ Helper::determineLanguageDirection() }}">
                                     </a>
                                 </li>
                             @endcan
-                            @can('view', \App\Models\License::class)
+                            <!-- @can('view', \App\Models\License::class)
                                 <li aria-hidden="true"{!! (Request::is('licenses*') ? ' class="active"' : '') !!}>
                                     <a href="{{ route('licenses.index') }}" {{$snipeSettings->shortcuts_enabled == 1 ? "accesskey=2" : ''}} tabindex="-1" data-tooltip="true" data-placement="bottom" data-title="{{ trans('general.licenses') }}">
                                         <x-icon type="licenses" class="fa-fw" />
                                         <span class="sr-only">{{ trans('general.licenses') }}</span>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan -->
                             @can('index', \App\Models\Accessory::class)
                                 <li aria-hidden="true"{!! (Request::is('accessories*') ? ' class="active"' : '') !!}>
                                     <a href="{{ route('accessories.index') }}" {{$snipeSettings->shortcuts_enabled == 1 ? "accesskey=3" : ''}} tabindex="-1" data-tooltip="true" data-placement="bottom" data-title="{{ trans('general.accessories') }}">
@@ -221,14 +221,14 @@ dir="{{ Helper::determineLanguageDirection() }}">
                                                 </a>
                                             </li>
                                         @endcan
-                                        @can('create', \App\Models\License::class)
+                                        <!-- @can('create', \App\Models\License::class)
                                             <li{!! (Request::is('licenses/create') ? ' class="active"' : '') !!}>
                                                 <a href="{{ route('licenses.create') }}" tabindex="-1">
                                                     <x-icon type="licenses" />
                                                     {{ trans('general.license') }}
                                                 </a>
                                             </li>
-                                        @endcan
+                                        @endcan -->
                                         @can('create', \App\Models\Accessory::class)
                                             <li {!! (Request::is('accessories/create') ? 'class="active"' : '') !!}>
                                                 <a href="{{ route('accessories.create') }}" tabindex="-1">
@@ -593,14 +593,14 @@ dir="{{ Helper::determineLanguageDirection() }}">
                                 </ul>
                             </li>
                         @endcan
-                        @can('view', \App\Models\License::class)
+                        <!-- @can('view', \App\Models\License::class)
                             <li{!! (Request::is('licenses*') ? ' class="active"' : '') !!}>
                                 <a href="{{ route('licenses.index') }}">
                                     <x-icon type="licenses" class="fa-fw"/>
                                     <span>{{ trans('general.licenses') }}</span>
                                 </a>
                             </li>
-                        @endcan
+                        @endcan -->
                         @can('index', \App\Models\Accessory::class)
                             <li{!! (Request::is('accessories*') ? ' class="active"' : '') !!}>
                                 <a href="{{ route('accessories.index') }}">
@@ -771,11 +771,11 @@ dir="{{ Helper::determineLanguageDirection() }}">
                                             {{ trans('general.depreciation_report') }}
                                         </a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a href="{{ url('reports/licenses') }}" {{ (Request::is('reports/licenses') ? ' class="active"' : '') }}>
                                             {{ trans('general.license_report') }}
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <a href="{{ url('reports/asset_maintenances') }}" {{ (Request::is('reports/asset_maintenances') ? ' class="active"' : '') }}>
                                             {{ trans('general.asset_maintenance_report') }}
@@ -919,7 +919,7 @@ dir="{{ Helper::determineLanguageDirection() }}">
 
                 <div class="1hidden-xs pull-left">
                     <div class="pull-left" >
-                        <a target="_blank" href="https://RPASSET.rp.ac.rw" rel="noopener">RPASSET</a> is an IT Asset management System, made with <x-icon type="heart" style="color: #a94442; font-size: 10px" />
+                        <a target="_blank" href="https://www.RPASSET.rp.ac.rw" rel="noopener">RPASSET</a> is an IT Asset management System, made with <x-icon type="heart" style="color: #a94442; font-size: 10px" />
                             <span class="sr-only">love</span> by <a href="https://www.rp.ac.rw" rel="noopener">@RwandaPolytechnic</a>.
                     </div>
                     <div class="pull-right">

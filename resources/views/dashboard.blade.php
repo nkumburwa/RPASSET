@@ -49,27 +49,6 @@
   </div><!-- ./col -->
 
   <div class="col-lg-2 col-xs-6">
-     <a href="{{ route('licenses.index') }}">
-    <!-- small box -->
-    <div class="dashboard small-box bg-maroon">
-      <div class="inner">
-        <h3>{{ number_format($counts['license']) }}</h3>
-        <p>{{ trans('general.licenses') }}</p>
-      </div>
-      <div class="icon" aria-hidden="true">
-          <x-icon type="licenses" />
-      </div>
-        @can('view', \App\Models\License::class)
-          <a href="{{ route('licenses.index') }}" class="small-box-footer">{{ trans('general.view_all') }}
-              <x-icon type="arrow-circle-right" />
-          </a>
-        @endcan
-    </div>
-     </a>
-  </div><!-- ./col -->
-
-
-  <div class="col-lg-2 col-xs-6">
     <!-- small box -->
       <a href="{{ route('accessories.index') }}">
     <div class="dashboard small-box bg-orange">
@@ -120,7 +99,7 @@
      <div class="icon" aria-hidden="true">
          <x-icon type="components" />
      </div>
-       @can('view', \App\Models\License::class)
+       @can('view', \App\Models\Component::class)
          <a href="{{ route('components.index') }}" class="small-box-footer">{{ trans('general.view_all') }}
              <x-icon type="arrow-circle-right" />
          </a>
@@ -140,7 +119,7 @@
      <div class="icon" aria-hidden="true">
          <x-icon type="users" />
      </div>
-       @can('view', \App\Models\License::class)
+       @can('view', \App\Models\User::class)
          <a href="{{ route('users.index') }}" class="small-box-footer">{{ trans('general.view_all') }}
              <x-icon type="arrow-circle-right" />
          </a>
@@ -183,11 +162,6 @@
                             @endcan
                         </div>
                         <div class="col-md-3">
-                            @can('create', \App\Models\License::class)
-                                <a class="btn bg-maroon" style="width: 100%" href="{{ route('licenses.create') }}">{{ trans('general.new_license') }}</a>
-                            @endcan
-                        </div>
-                        <div class="col-md-3">
                             @can('create', \App\Models\Accessory::class)
                                 <a class="btn bg-orange" style="width: 100%" href="{{ route('accessories.create') }}">{{ trans('general.new_accessory') }}</a>
                             @endcan
@@ -195,6 +169,11 @@
                         <div class="col-md-3">
                             @can('create', \App\Models\Consumable::class)
                                 <a class="btn bg-purple" style="width: 100%" href="{{ route('consumables.create') }}">{{ trans('general.new_consumable') }}</a>
+                            @endcan
+                        </div>
+                        <div class="col-md-3">
+                            @can('create', \App\Models\Component::class)
+                                <a class="btn bg-yellow" style="width: 100%" href="{{ route('components.create') }}">{{ trans('general.new_component') }}</a>
                             @endcan
                         </div>
                     </div>
@@ -338,10 +317,6 @@
                                         <x-icon type="components" />
 										<span class="sr-only">{{ trans('general.components_count') }}</span>
 									</th>
-									<th class="col-sm-1" data-visible="true" data-field="licenses_count" data-sortable="true">
-                                        <x-icon type="licenses" />
-										<span class="sr-only">{{ trans('general.licenses_count') }}</span>
-									</th>
 								</tr>
 								</thead>
 							</table>
@@ -457,7 +432,7 @@
                                     <span class="sr-only">{{ trans('general.asset_count') }}</span>
                                 </th>
                                 <th class="col-sm-1" data-visible="true" data-field="accessories_count" data-sortable="true">
-                                    <x-icon type="licenses" />
+                                    <x-icon type="accessories" />
                                     <span class="sr-only">{{ trans('general.accessories_count') }}</span>
                                 </th>
                                 <th class="col-sm-1" data-visible="true" data-field="consumables_count" data-sortable="true">
@@ -467,10 +442,6 @@
                                 <th class="col-sm-1" data-visible="true" data-field="components_count" data-sortable="true">
                                     <x-icon type="components" />
                                     <span class="sr-only">{{ trans('general.components_count') }}</span>
-                                </th>
-                                <th class="col-sm-1" data-visible="true" data-field="licenses_count" data-sortable="true">
-                                    <x-icon type="licenses" />
-                                    <span class="sr-only">{{ trans('general.licenses_count') }}</span>
                                 </th>
                             </tr>
                             </thead>
